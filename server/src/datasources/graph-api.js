@@ -5,6 +5,14 @@ class GraphAPI extends RESTDataSource {
     super();
     this.baseURL = '';
   }
+
+  getCommits() {
+    return this.get('commits');
+  }
+
+  getAuthor(authorId) {
+    return this.get(`author/${authorId}`);
+  }
 }
 
 module.exports = GraphAPI;

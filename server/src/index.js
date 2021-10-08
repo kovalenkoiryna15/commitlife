@@ -1,6 +1,7 @@
 const { ApolloServer } = require('apollo-server');
 const typeDefs = require('./schema');
 const resolvers = require('./resolvers');
+
 const GraphAPI = require('./datasources/graph-api');
 
 const server = new ApolloServer({
@@ -8,9 +9,9 @@ const server = new ApolloServer({
   resolvers,
   dataSources: () => {
     return {
-      graphAPI: new GraphAPI()
+      graphAPI: new GraphAPI(),
     };
-  }
+  },
 });
 
 server.listen().then(() => {
